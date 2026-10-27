@@ -16,9 +16,8 @@ test.beforeEach(async ({ page }) => {
   await signUpUser(page, user);
 });
 
-test('Creat an article without required fields', async () => {
+test('Create an article without required fields', async () => {
   await homePage.clickNewArticleLink();
-
   await createArticlePage.clickPublishArticleButton();
   await createArticlePage.assertErrorMessageContainsText(TITLE_CANNOT_BE_EMPTY);
 });
